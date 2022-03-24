@@ -1,8 +1,8 @@
 import React from 'react'
-
+import "./Footer.module.css";
 function Footer() {
     return (
-        <div>
+        <div className='navbar'>
             <h1>footer</h1>
         </div>
     )
