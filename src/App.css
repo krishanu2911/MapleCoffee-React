@@ -44,6 +44,41 @@
     flex-direction: column;
     background-color: var(--ecom-bg-light);
 }
+.prodListing-main{
+    display: flex;
+}
+.header-image{
+    padding: 1rem;
+    border-radius: 2rem;
+    width: fit-content;
+}
+.footer-card{
+    padding: 1rem;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+.card{
+    border-radius: 2rem;
+    background-color: var(--ecom-bg-light);
+}
+.filter-div{
+    width: 20rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.hearder-text-primary{
+    justify-content: space-between;
+}
+.prodList-div{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.clear-btn{
+    border: 2px solid black;
+}
 @media only screen and (max-width: 769px) {
     .hero-img{
         width: 10rem;

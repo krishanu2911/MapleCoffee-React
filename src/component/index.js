@@ -5,6 +5,7 @@ import  Categories from "./Categories/Categories";
 import Loader from "./Loader";
 import CategorieItem from "./Categories/CategorieItem";
 import NewEdition from "./NewEdition";
+import FilterSection from "./FilterSection";
 export {
     Navbar,
     Footer,
@@ -12,5 +13,6 @@ export {
     Categories,
     Loader,
     CategorieItem,
-    NewEdition
+    NewEdition,
+    FilterSection
 }
