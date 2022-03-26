@@ -1,10 +1,13 @@
 import React from 'react'
-
+import { Banner , Categories , NewEdition } from "../component/index"
 function Home() {
     return (
-        <div>
-            <h1>Home Landing Page</h1>
-        </div>
+        <>
+        <Banner />
+        <Categories />
+        <NewEdition />
+        </>
+            
     )
 }
 export default Home;

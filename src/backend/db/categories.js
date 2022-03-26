@@ -8,20 +8,20 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
+    categoryName: "Light Coffee",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "Light roasts provide the lightest, most delicate flavors.This Helps the coffee to have their original aroma",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    categoryName: "Medium Coffee",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Medium-roasted beans will have a chocolate brown color, dry surface, and a full flavor.",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
+    categoryName: "Dark Coffee",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Dark-roasted coffee is roasted until the sugars begin to caramelize and the oils begin to rise to the surface of the bean.",
   },
 ];

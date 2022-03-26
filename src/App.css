@@ -1,0 +1,51 @@
+@import url("https://maple-ui.netlify.app/CSS/base.css");
+:root{
+    --ecom-bg-dark : #d6d3d1;
+    --ecom-bg-light: rgb(238, 238, 238, 1);
+    --ecom-shadow: 0 3px 6px #00000029;
+    --ecom-btn-text-color: #111827;
+}
+.nav-bar{
+    background-color: white;
+}
+.nav-rigth{
+    justify-content: baseline;
+}
+.logo-txt{
+    font-size: 2.2rem;
+}
+.hero-img{
+    width: 25rem;
+}
+.category-div{
+    gap: 2rem;
+}
+.newEdition-div{
+    margin-top: 1rem;
+    background-color: var(--ecom-bg-light);
+    gap: 1rem;
+    flex-direction: column;
+}
+.newEditionItem{
+    max-width: 20rem;
+    background-color: white;
+}
+.gap-m{
+    gap: 2rem;
+}
+.maple-footer{
+    min-height: 5rem;
+}
+.category-item{
+    max-width: 20rem;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 2rem;
+    flex-direction: column;
+    background-color: var(--ecom-bg-light);
+}
+@media only screen and (max-width: 769px) {
+    .hero-img{
+        width: 10rem;
+    }
+}
