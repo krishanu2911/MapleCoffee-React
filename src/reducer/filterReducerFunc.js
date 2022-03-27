@@ -12,11 +12,8 @@ function filterReducerFunc (state,action) {
             : { ...state, sortByHighToLow: false, sortByLowToHigh: true };
         case "CATEGORY":
             const { category } = state;
-            console.log(category)
              if(category.includes(action.payload)){
                 const updateCate = category.filter((cateName) => cateName !== action.payload);
-                console.log(updateCate)
-                
                 return{...state,category: updateCate}
              }else{
                return { ...state, category: [...state.category , action.payload] }  

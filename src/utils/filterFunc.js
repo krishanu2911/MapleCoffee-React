@@ -7,8 +7,8 @@ const sortByLowToHighFunc = (state, prodList) => {
   const { sortByLowToHigh } = state;
   const temp = [...prodList];
   return sortByLowToHigh
-    ? prodList.sort((a, b) => a.price - b.price)
-    : prodList;
+    ? temp.sort((a, b) => a.price - b.price)
+    : temp;
 };
 const ratingFunc = (state, prodList) => {
   const { rating } = state;
@@ -17,9 +17,6 @@ const ratingFunc = (state, prodList) => {
 };
 const categoryFunc = (state, prodList) => {
   const { category } = state;
-  // if(category.includes(action.payload)){
-    
-  // }
   const temp = [...prodList];
   if(category.length === 0){
       return temp

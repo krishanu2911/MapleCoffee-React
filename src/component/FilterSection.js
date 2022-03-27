@@ -2,13 +2,12 @@ import React from "react";
 import { useProduct } from "../context/product-context";
 import "../App.css";
 function FilterSection() {
-  const { state, dispatch } = useProduct();
-  console.log(state);
+  const { filterState, filterDispatch } = useProduct();
   return (
     <div className="filter-div">
       <button
         className="txt-lg bold-font clear-btn"
-        onClick={() => dispatch({ type: "RESET" })}
+        onClick={() => filterDispatch({ type: "RESET" })}
       >
         All Clear
       </button>
@@ -18,9 +17,9 @@ function FilterSection() {
         <input
           type="radio"
           name="SORT"
-          checked={state.sortByHighToLow}
+          checked={filterState.sortByHighToLow}
           value="HIGH_TO_LOW"
-          onClick={(e) => dispatch({ type: "SORT", payload: e.target.value })}
+          onClick={(e) =>filterDispatch({ type: "SORT", payload: e.target.value })}
         />
       </div>
       <div>
@@ -28,9 +27,9 @@ function FilterSection() {
         <input
           type="radio"
           name="SORT"
-          checked={state.sortByLowToHigh}
+          checked={filterState.sortByLowToHigh}
           value="LOW_TO_HIGH"
-          onClick={(e) => dispatch({ type: "SORT", payload: e.target.value })}
+          onClick={(e) => filterDispatch({ type: "SORT", payload: e.target.value })}
         />
       </div>
       <h1 className="txt-lg">Sort by Category</h1>
@@ -39,9 +38,9 @@ function FilterSection() {
         <input
           type="checkbox"
           value="LIGHT_COFFEE"
-          checked={state.category.includes("LIGHT_COFFEE")}
+          checked={filterState.category.includes("LIGHT_COFFEE")}
           onClick={(e) =>
-            dispatch({ type: "CATEGORY", payload: e.target.value })
+            filterDispatch({ type: "CATEGORY", payload: e.target.value })
           }
         />
       </div>
@@ -50,9 +49,9 @@ function FilterSection() {
         <input
           type="checkbox"
           value="MEDIUM_COFFEE"
-          checked={state.category.includes("MEDIUM_COFFEE")}
+          checked={filterState.category.includes("MEDIUM_COFFEE")}
           onClick={(e) =>
-            dispatch({ type: "CATEGORY", payload: e.target.value })
+            filterDispatch({ type: "CATEGORY", payload: e.target.value })
           }
         />
       </div>
@@ -61,9 +60,9 @@ function FilterSection() {
         <input
           type="checkbox"
           value="DARK_COFFEE"
-          checked={state.category.includes("DARK_COFFEE")}
+          checked={filterState.category.includes("DARK_COFFEE")}
           onClick={(e) =>
-            dispatch({ type: "CATEGORY", payload: e.target.value })
+            filterDispatch({ type: "CATEGORY", payload: e.target.value })
           }
         />
       </div>
@@ -74,11 +73,11 @@ function FilterSection() {
           type="range"
           min="1"
           max="4"
-          value={state.rating}
+          value={filterState.rating}
           step="1"
           list="tickmarks"
           onChange={(e) =>
-            dispatch({ type: "RATING", payload: e.target.value })
+            filterDispatch({ type: "RATING", payload: e.target.value })
           }
         />
         <datalist id="tickmarks">
