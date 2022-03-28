@@ -1,8 +1,20 @@
 import React from 'react';
 import "../App.css";
 import { FaHeart } from "react-icons/fa";
+import { useUserDetail} from "../context/userdetail-context";
 function ProductCard( {prod}) {
-    const { imgurl ,title ,rating ,price } = prod;
+    const { imgurl ,title ,rating ,price  } = prod;
+    const { userDetail , setUserDetail } = useUserDetail();
+    const { wishlist } = userDetail;
+    function addWishlistHandler(productWish) {
+      const findProdInWishList = wishlist.find((item) => item._id === productWish._id )
+      if(findProdInWishList){
+        console.log("already a added to wishlist");
+        //will add the toast here later on just added console for only test purpose
+      }else{
+        setUserDetail({...userDetail,wishlist:[...wishlist, productWish]})
+      }
+    }
     return (
         <div>
           <div className="card ">
@@ -25,7 +37,7 @@ function ProductCard( {prod}) {
                 </div>
               </div>
               <div className="footer-card">
-                <div className="icons txt-lg bold-font">
+                <div className="icons txt-lg bold-font" onClick={() => addWishlistHandler(prod)}>
                   <FaHeart />
                 </div>
                 <div className="icons txt-lg bold-font">Add To Cart</div>
