@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUserDetail ,  } from '../context/userdetail-context';
+import { useUserDetail } from '../context/userdetail-context';
 import "../App.css";
 import WishlistCard from './WishlistCard';
 

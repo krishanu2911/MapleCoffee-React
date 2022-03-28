@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import { useUserDetail} from "../context/userdetail-context";
+import { useUserDetail } from "../context/userdetail-context";
 function WishlistCard( { item }) {
   const { userDetail , setUserDetail } = useUserDetail();
   const { wishlist } = userDetail;
