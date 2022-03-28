@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState } from 'react';
 import "../App.css";
 import { FaHeart } from "react-icons/fa";
 import { useUserDetail} from "../context/userdetail-context";
@@ -9,8 +9,8 @@ function ProductCard( {prod}) {
     function addWishlistHandler(productWish) {
       const findProdInWishList = wishlist.find((item) => item._id === productWish._id )
       if(findProdInWishList){
-        console.log("already a added to wishlist");
-        //will add the toast here later on just added console for only test purpose
+      const RevomveWishList = wishlist.filter((item) => item._id !== productWish._id );
+      setUserDetail({...userDetail, wishlist:[...RevomveWishList]})
       }else{
         setUserDetail({...userDetail,wishlist:[...wishlist, productWish]})
       }
@@ -38,7 +38,9 @@ function ProductCard( {prod}) {
               </div>
               <div className="footer-card">
                 <div className="icons txt-lg bold-font" onClick={() => addWishlistHandler(prod)}>
-                  <FaHeart />
+                  {
+                    wishlist.find((item) => item._id === prod._id ) ? <h1 className='txt-m'>Remove from wishlist</h1> : <FaHeart />
+                  }
                 </div>
                 <div className="icons txt-lg bold-font">Add To Cart</div>
               </div>
