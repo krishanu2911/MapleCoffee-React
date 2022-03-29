@@ -6,8 +6,8 @@ function WishlistCard( { item }) {
   const { wishlist } = userDetail;
   const { imgurl ,title ,rating ,price  } = item;
   function removeWishHandler (prod) {
-      const RevomveWishList = wishlist.filter((item) => item._id !== prod._id );
-      setUserDetail({...userDetail, wishlist:[...RevomveWishList]})
+      const RemovedWishList = wishlist.filter((item) => item._id !== prod._id );
+      setUserDetail({...userDetail, wishlist:[...RemovedWishList]})
   }
   return (
     <div className="card ">

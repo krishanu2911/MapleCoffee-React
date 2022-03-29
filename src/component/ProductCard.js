@@ -9,8 +9,8 @@ function ProductCard( {prod}) {
     function addWishlistHandler(productWish) {
       const findProdInWishList = wishlist.find((item) => item._id === productWish._id )
       if(findProdInWishList){
-      const RevomveWishList = wishlist.filter((item) => item._id !== productWish._id );
-      setUserDetail({...userDetail, wishlist:[...RevomveWishList]})
+      const RemovedWishList = wishlist.filter((item) => item._id !== productWish._id );
+      setUserDetail({...userDetail, wishlist:[...RemovedWishList]})
       }else{
         setUserDetail({...userDetail,wishlist:[...wishlist, productWish]})
       }
