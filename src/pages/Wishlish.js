@@ -1,9 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { useUserDetail } from '../context/userdetail-context';
+import "../App.css";
+import WishlistCard from './WishlistCard';
 
 function Wishlish() {
+    const { userDetail } = useUserDetail();
+    const { wishlist } = userDetail;
     return (
-        <div>
-           <h1>Wishlist Page</h1> 
+        <div className='maple-flex-xy-center maple-wrap gap-m'>
+           {
+              (wishlist.length===0) ?  <h1>Your Wishlist is empty</h1>
+              : wishlist.map((item) => {
+                   return <WishlistCard item={item} key={item._id}/>
+               })
+           }
         </div>
     )
 }
