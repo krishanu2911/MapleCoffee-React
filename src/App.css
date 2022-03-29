@@ -76,6 +76,23 @@
     display: flex;
     flex-wrap: wrap;
 }
+.cart-qty-btn{
+    cursor: pointer;
+    width: 2rem;
+}
+.item-bill{
+    justify-content: space-between;
+}
+.bill-section{
+    padding: 2rem;
+}
+.cart-section{
+    padding: 1rem;
+    justify-content: space-between;
+}
+.cartlist-section{
+    gap: 1rem;
+}
 .clear-btn{
     border: 2px solid black;
 }

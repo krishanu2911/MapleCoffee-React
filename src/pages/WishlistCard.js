@@ -1,13 +1,27 @@
 import React from "react";
 import "../App.css";
 import { useUserDetail } from "../context/userdetail-context";
+import { useNavigate } from "react-router-dom";
 function WishlistCard( { item }) {
+  const cartNavigate = useNavigate();
   const { userDetail , setUserDetail } = useUserDetail();
-  const { wishlist } = userDetail;
+  const { wishlist , cartlist } = userDetail;
   const { imgurl ,title ,rating ,price  } = item;
   function removeWishHandler (prod) {
       const RemovedWishList = wishlist.filter((item) => item._id !== prod._id );
       setUserDetail({...userDetail, wishlist:[...RemovedWishList]})
+  }
+  function addToCartClickHandler(productToCart){
+    const findProdInCart = cartlist.find((item) => item._id === productToCart._id)
+    const RemovedWishList = wishlist.filter((item) => item._id !==  productToCart._id );
+    if(findProdInCart){
+      
+      setUserDetail({...userDetail, wishlist:[...RemovedWishList]})
+      cartNavigate("/cart")
+    }else{
+      setUserDetail({...userDetail,cartlist:[...cartlist,productToCart],wishlist:[...RemovedWishList]})
+      cartNavigate("/cart")
+    }
   }
   return (
     <div className="card ">
@@ -32,7 +46,7 @@ function WishlistCard( { item }) {
         >
           Remove
         </div>
-        <div className="icons txt-lg bold-font">Add To Cart</div>
+        <div className="icons txt-lg bold-font" onClick={() => addToCartClickHandler(item)}>Add To Cart</div>
       </div>
     </div>
   );
