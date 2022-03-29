@@ -1,11 +1,21 @@
 import React , { useState } from 'react';
 import "../App.css";
 import { FaHeart } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 import { useUserDetail} from "../context/userdetail-context";
 function ProductCard( {prod}) {
+    const cartNavigate =  useNavigate();
     const { imgurl ,title ,rating ,price  } = prod;
     const { userDetail , setUserDetail } = useUserDetail();
-    const { wishlist } = userDetail;
+    const { wishlist, cartlist } = userDetail;
+    function addToCartHandler (productcart) {
+      const findProdInCart = cartlist.find((item) => item._id === productcart._id)
+      if(findProdInCart){
+        cartNavigate("/cart")
+      }else{
+        setUserDetail({...userDetail, cartlist:[...cartlist, {...productcart,count:1}]})
+      }
+    }
     function addWishlistHandler(productWish) {
       const findProdInWishList = wishlist.find((item) => item._id === productWish._id )
       if(findProdInWishList){
@@ -15,6 +25,7 @@ function ProductCard( {prod}) {
         setUserDetail({...userDetail,wishlist:[...wishlist, productWish]})
       }
     }
+    console.log(cartlist)
     return (
         <div>
           <div className="card ">
@@ -37,12 +48,20 @@ function ProductCard( {prod}) {
                 </div>
               </div>
               <div className="footer-card">
-                <div className="icons txt-lg bold-font" onClick={() => addWishlistHandler(prod)}>
+                <div className="icons txt-lg bold-font" onClick={() => {
+
+                  addWishlistHandler(prod)
+                  }}>
                   {
                     wishlist.find((item) => item._id === prod._id ) ? <h1 className='txt-m'>Remove from wishlist</h1> : <FaHeart />
                   }
                 </div>
-                <div className="icons txt-lg bold-font">Add To Cart</div>
+                
+                <div className="icons txt-lg bold-font" onClick={() => addToCartHandler(prod)}>
+                 {
+                  cartlist.find((item) => item._id === prod._id) ? <h1 className='txt-lg'>Go to Cart</h1> : <h1 className='txt-lg bold-font'>Add to cart</h1>
+                }
+                  </div>
               </div>
             </div>  
         </div>
