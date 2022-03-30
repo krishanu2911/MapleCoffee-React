@@ -8,19 +8,22 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "LightCoffee",
+    categoryTitle:"LightCoffee",
+    categoryName: "LIGHT_COFFEE",
     description:
       "Light roasts provide the lightest, most delicate flavors.This Helps the coffee to have their original aroma",
   },
   {
     _id: uuid(),
-    categoryName: "MediumCoffee",
+    categoryTitle:"MediumCoffee",
+    categoryName: "MEDIUM_COFFEE",
     description:
       "Medium-roasted beans will have a chocolate brown color, dry surface, and a full flavor.",
   },
   {
     _id: uuid(),
-    categoryName: "DarkCoffee",
+    categoryTitle: "DarkCoffee",
+    categoryName: "DARK_COFFEE",
     description:
       "Dark-roasted coffee is roasted until the sugars begin to caramelize and the oils begin to rise to the surface of the bean.",
   },

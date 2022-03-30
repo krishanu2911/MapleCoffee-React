@@ -15,8 +15,8 @@ function WishlistCard( { item }) {
     const findProdInCart = cartlist.find((item) => item._id === productToCart._id)
     const RemovedWishList = wishlist.filter((item) => item._id !==  productToCart._id );
     if(findProdInCart){
-      
-      setUserDetail({...userDetail, wishlist:[...RemovedWishList]})
+      const updatedQtyItemExistInCart = cartlist.map((item) => item._id === productToCart._id ? {...item,count: item.count+1} : {...item})
+      setUserDetail({...userDetail, wishlist:[...RemovedWishList],cartlist:[...updatedQtyItemExistInCart]})
       cartNavigate("/cart")
     }else{
       setUserDetail({...userDetail,cartlist:[...cartlist,productToCart],wishlist:[...RemovedWishList]})
