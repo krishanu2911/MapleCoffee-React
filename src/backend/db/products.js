@@ -28,7 +28,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    title: "Cappecino",
+    title: "cappuccino",
     newedition: false,
     author: "Shiv Khera",
     price: "199",
