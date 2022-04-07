@@ -9,7 +9,7 @@ function Wishlish() {
     return (
         <div className='maple-flex-xy-center maple-wrap gap-m'>
            {
-              (wishlist.length===0) ?  <h1>Your Wishlist is empty</h1>
+              (wishlist.length===0) ?  <h1 className='txt-center'>Your Wishlist is empty</h1>
               : wishlist.map((item) => {
                    return <WishlistCard item={item} key={item._id}/>
                })
