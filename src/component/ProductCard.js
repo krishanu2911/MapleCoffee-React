@@ -39,12 +39,12 @@ function ProductCard( {prod}) {
                 </div>
                 <div className="pd-horizontal">
                   <div className="hearder-text-primary maple-flex ">
-                    <h1>{title}</h1>
-                    <h2>⭐{rating}⭐</h2>
+                    <h1 className='txt-lg'>{title}</h1>
+                    <h2>{rating}⭐</h2>
                   </div>
                 </div>
                 <div className="hearder-text-secondary pd-horizontal">
-                  <h3>💰{price}/-</h3>
+                  <h3>Rs {price}/-</h3>
                 </div>
               </div>
               <div className="footer-card">
