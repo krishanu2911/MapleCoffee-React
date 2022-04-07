@@ -10,14 +10,14 @@ function Login() {
           <input type="text" placeholder="user Email" />
         </div>
         <div className="flex-column width-100">
-          <label className="lightcolor txt-lg bold-font">Password</label>
+          <label className="txt-lg bold-font">Password</label>
           <div className="maple-flex gap-m">
             <input
               type={showPass ? "text" : "password"}
               placeholder="enter password"
             />
             <button
-              className=" txt-m boldest-font"
+              className="txt-m boldest-font"
               onClick={() => setShowPass((prev) => !prev)}
             >
               {showPass ? "Hide" : "Show"}
