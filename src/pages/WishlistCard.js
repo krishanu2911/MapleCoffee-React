@@ -13,13 +13,12 @@ function WishlistCard( { item }) {
   }
   function addToCartClickHandler(productToCart){
     const findProdInCart = cartlist.find((item) => item._id === productToCart._id)
-    const RemovedWishList = wishlist.filter((item) => item._id !==  productToCart._id );
     if(findProdInCart){
       const updatedQtyItemExistInCart = cartlist.map((item) => item._id === productToCart._id ? {...item,count: item.count+1} : {...item})
-      setUserDetail({...userDetail, wishlist:[...RemovedWishList],cartlist:[...updatedQtyItemExistInCart]})
+      setUserDetail({...userDetail,cartlist:[...updatedQtyItemExistInCart]})
       cartNavigate("/cart")
     }else{
-      setUserDetail({...userDetail,cartlist:[...cartlist,productToCart],wishlist:[...RemovedWishList]})
+      setUserDetail({...userDetail,cartlist:[...cartlist,{...productToCart,count:1}]})
       cartNavigate("/cart")
     }
   }

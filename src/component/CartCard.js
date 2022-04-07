@@ -20,7 +20,7 @@ function CartCard({ prod }) {
       );
       setUserDetail({
         ...userDetail,
-        wishlist: [...wishlist, moveProductToWish],
+        wishlist: [...wishlist, {...moveProductToWish,count:1}],
         cartlist: [...updatedCartAfterRemove],
       });
     }

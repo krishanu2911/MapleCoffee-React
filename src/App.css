@@ -96,6 +96,14 @@
 .clear-btn{
     border: 2px solid black;
 }
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.width-100{
+    width: 100%;
+}
+
 @media only screen and (max-width: 769px) {
     .hero-img{
         width: 10rem;

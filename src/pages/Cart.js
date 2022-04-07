@@ -7,7 +7,7 @@ function Cart() {
   const { cartlist } = userDetail;
   return (
     cartlist.length ? 
-    <div className="cart-section maple-flex">
+    <div className="cart-section maple-flex gap-m maple-wrap">
       <div className="maple-flex maple-wrap cartlist-section">
         {cartlist.map((prod) => {
           return <CartCard prod={prod} key={prod._id} />;
@@ -17,7 +17,7 @@ function Cart() {
         <BillSection />
       </div>
     </div>
-    : <h1>Your Cart is Empty</h1>
+    : <h1 className="txt-center">Your Cart is Empty</h1>
   );
 }
 export default Cart;
